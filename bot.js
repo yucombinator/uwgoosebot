@@ -14,13 +14,13 @@ bot.on('error', (err) => {
 bot.on('message', (payload, reply) => {
   let text = payload.message.text
   reply({ text }, (err) => {
-      // if (err) throw JSON.stringify(err, null, 4)
+      if (err) console.error(JSON.stringify(err, null, 4))
 
-      console.log(`Echoed back to ${profile.first_name} ${profile.last_name}: ${text}`)
+      console.log(`Echoed back to: ${text}`)
   })
 //   bot.getProfile(payload.sender.id, (err, profile) => {
 //     if (err) throw JSON.stringify(err, null, 4)
-//   
+//     console.log(`Echoed back to ${profile.first_name} ${profile.last_name}: ${text}`)
 //   })
 })
 
